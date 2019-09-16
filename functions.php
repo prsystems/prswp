@@ -120,8 +120,16 @@ add_action( 'widgets_init', 'prswp_widgets_init' );
  * Enqueue scripts and styles.
  */
 function prswp_scripts() {
+	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
+	
+    wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.10.2/css/all.css' );
+    
 	wp_enqueue_style( 'prswp-style', get_stylesheet_uri() );
+	
+	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/custom.css' );
 
+	wp_enqueue_script( 'bootstrap_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array('jquery') );
+    
 	wp_enqueue_script( 'prswp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'prswp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -165,3 +173,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
