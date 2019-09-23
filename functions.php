@@ -177,7 +177,7 @@ add_action( 'widgets_init', 'prswp_widgets_init' );
 function prswp_scripts() {
 	wp_enqueue_style( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' );
 	
-    wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.10.2/css/all.css' );
+    wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.11.1/css/all.css' );
     
 	wp_enqueue_style( 'prswp-style', get_stylesheet_uri() );
 
