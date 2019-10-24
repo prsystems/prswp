@@ -28,5 +28,7 @@ get_header(); ?>
                 </main><!-- #main -->
             </div><!-- #primary -->
         </div><!-- .col-12 -->
+	</div><!-- .row -->
+</div><!-- .container -->
 <?php
 get_footer();
